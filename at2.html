@@ -7545,31 +7545,58 @@ O processo de aprendizado deve ter as seguintes etapas:</p>
 </ul>
 </li>
 <li><p><strong>Como podemos definir o erro total de previsão de um modelo?</strong>
-O erro total da previsão de um modelo pode ser dado por meio da seguintes estatisticas:</p>
+O erro total de previsão pode ser decomposto em 3 erros, sendo eles:</p>
 <ol>
-<li><strong>Distância Euclidiana</strong>:
-$$
- \text{d}(y, \hat{y}) = \sqrt{\sum_{i=1}^n (y_i - \hat{y}_i)^2}
- $$</li>
-<li><strong>Erro Absoluto Total</strong>:
-$$
- \text{EAT} = \sum_{i=1}^n \left|y_i - \hat{y}_i\right|
- $$</li>
-<li><strong>Erro Absoluto Médio</strong>:
-$$
- \text{EAM} = \frac{1}{n}\sum_{i=1}^n \left|y_i - \hat{y}_i\right|
- $$</li>
-<li><strong>Média do Resíduo ao Quadrado</strong>:
-$$
- \text{MSR} = \frac{1}{n}{\sum_{i=1}^n (y_i - \hat{y}_i)^2}
- $$</li>
+<li><strong>Erro de Viés</strong>: Que seria o erro quando o modelo é simples e não consegue capturar o padrão dos dados.</li>
+<li><strong>Erro de Variância</strong>: Este erro acontece quando temos um algoritmo complexo e ele acaba perdendo a capacidade de generalizar para novas observações.</li>
+<li><strong>Erro irredutivel</strong>: Já o erro irredutivel se da pelo fato do ruido apresentado nos dados, portanto o medelo não é capaz de prever corretamente esse erro.</li>
 </ol>
 </li>
-<li><p><strong>Qual a regra geral de um bom modelo?</strong></p>
+<li><p><strong>Qual a regra geral de um bom modelo?</strong>
+Um bom modelo precisa ter uma boa precisão, ou seja, conseguir fazer boas previsões; também precisa ter uma boa interpretabilidade, podendo verificar quais variáveis são mais importantes; ter uma boa capacidade de generalização para novas observações; o modelo precisa ser escalável, sendo capaz de trabalhar com grande quantidade de dados e, ao mesmo tempo, ser eficiente, gerando previsões em um tempo rápido e consumindo o mínimo de recursos.</p>
 </li>
 <li><p><strong>Cite duas métricas e coloque a equação descrevendo as variáveis de solução que podemos utilizar para avaliar quantitativamente o desempenho do modelo de Regressão?</strong></p>
+<ol>
+<li><p><strong>Distância Euclidiana</strong>: A distância euclidiana mede a diferença entre os valores verdadeiros e os valores previstos. É calculada como a raiz quadrada da soma dos quadrados das diferenças individuais entre os valores verdadeiros e previstos:
+$$
+\text{d}(y, \hat{y}) = \sqrt{\sum_{i=1}^n (y_i - \hat{y}_i)^2}
+$$</p>
 </li>
-<li><p><strong>Cite duas métricas e coloque a equação descrevendo as variáveis de solução que podemos utilizar para avaliar quantitativamente o desempenho do modelo de Classificação?</strong></p>
+<li><p><strong>Erro Quadrático Médio (MSE)</strong>: O Erro Quadrático Médio é a média da soma dos quadrados das distâncias entre os valores verdadeiros e os valores previstos. É uma medida comum para avaliar a precisão de um modelo de regressão:
+$$
+\text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+$$</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Cite duas métricas e coloque a equação descrevendo as variáveis de solução que podemos utilizar para avaliar quantitativamente o desempenho do modelo de Classificação?</strong>
+Diferente da regressão, agora estamos interessado de saber se o modelo fez a classificação certa, portanto so vamos ter dois estados ou o modelo acerta a classificação ou ele erra.</p>
+<ol>
+<li><strong>Acurácia</strong>: Esta métrica é importante porque nos permite ver a proporção de instâncias que o modelo classifica corretamente. A fórmula da acurácia é:
+$$
+\text{Acurácia} = \frac{TP + TN}{P + N}
+$$
+onde:</li>
+</ol>
+<ul>
+<li>( TP ) (True Positive) é o número de verdadeiros positivos.</li>
+<li>( TN ) (True Negative) é o número de verdadeiros negativos.</li>
+<li>( P ) (Positive) é o número total de positivos.</li>
+<li>( N ) (Negative) é o número total de negativos.</li>
+</ul>
+<ol start="2">
+<li><strong>Taxa de Erro</strong>: A taxa de erro é uma boa estatística porque nos permite ver a proporção de instâncias que o modelo classifica incorretamente. A fórmula da taxa de erro é:
+$$
+\text{Taxa de Erro} = \frac{FP + FN}{P + N}
+$$
+onde:</li>
+</ol>
+<ul>
+<li>( FP ) (False Positive) é o número de falsos positivos.</li>
+<li>( FN ) (False Negative) é o número de falsos negativos.</li>
+<li>( P ) (Positive) é o número total de positivos.</li>
+<li>( N ) (Negative) é o número total de negativos.</li>
+</ul>
 </li>
 </ol>
 </div>
