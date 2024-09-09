@@ -5,7 +5,7 @@ Este repositório tem como propósito disponibilizar meus estudos aplicados a re
 ## Listas de Exercícios
 
 A pasta **listas** contém exercícios com conceitos iniciais de redes neurais. Essas listas foram aplicadas pelo meu professor 
-[Jodavid Ferreira](https://github.com/Jodavid), da UFPE, na disciplina de Redes Neurais. Para verificar o repositório dele, [clique aqui](https://www.de.ufpe.br/~jodavid/material/redes_neurais/pagina/_site/).
+[Jodavid Ferreira](https://github.com/Jodavid), da UFPE, na disciplina de Redes Neurais.
 
 ## Estrutura do Repositório
 
