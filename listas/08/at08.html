@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>at3</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>at08</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7517,7 +7517,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 style="text-align: center;">Lista 3 - Exercícios Redes Neurais:</h1>
+<h1 style="text-align: center;">Lista 8 - Exercícios Redes Neurais:</h1>
 <h2 style="text-align: center;">
 <a href="https://github.com/Jodavid" style="color: blue; text-decoration: underline;" target="_blank">
         Prof. Dr. Jodavid Ferreira
@@ -7525,7 +7525,7 @@ a.anchor-link {
 </h2>
 <p><em>Discente:</em></p>
 <pre><code>*   Gabriel D'assumpção de Carvalho</code></pre>
-<p><em>Data:</em> 29/07/2024</p>
+<p><em>Data:</em> 10/09/2024</p>
 <hr/>
 <hr/>
 </div>
@@ -7539,38 +7539,280 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol>
-<li><p><strong>O que são Redes Neurais Artificiais?</strong>
-Redes neurais é um modelo de aprendizado de maquina que percente ao grupo de aprendizado profundo onde a inteção é imitar o aprendizado de um cérebro humano, tendo as sinpase onde elas vão conter os paramêtros de peso e vão ser ligada aos neurôneus que contem uma função de ativação que sera aplicada a soma dos valores anteriores multiplicado pelos pesos e acrescentado um vies.</p>
+<li><strong>Uma rede neural convolucional (CNN) é composta minimamente de quantos componentes, ou seja, quais são os componentes mínimos para formar uma arquitetura de CNN? Quais são esses componentes? (Considere as camadas de entrada e saída como componentes).</strong></li>
+</ol>
+<p>Uma rede neural convolucional (CNN) é composta minimamente de 4 componentes, essenciais para formar uma arquitetura básica, são eles:</p>
+<ol>
+<li><p>Camada de entrada: Recebe os dados de entrada, em formato de matriz (por exemplo uma imagem RGP, onde vai possuir dimensões como altura, largura, e três canais de cor).</p>
 </li>
-<li><p><strong>Esboce a estrutura de uma rede neural artificial, adicionando informações sobre cada parte da rede.</strong>
-<img alt="alt text" src="nn.png"/></p>
-<p>onde:</p>
-<ul>
-<li><strong>( x1 )</strong> Feature.</li>
-<li><strong>( w1 )</strong> Peso.</li>
-<li><strong>( b )</strong> Bias.</li>
-<li><strong>( f(x1*w1 + b) )</strong> Função de Ativação .</li>
-<li><strong>( ŷ )</strong> Target Estimado.</li>
-</ul>
+<li><p>Camada de convolução: Aplica os filtros (kernels) que "varrem" a imagem para extrair características como bordas, texturar, linhas horizontais ou verticais. Essa camada é responsável por detectar de padrões especiais.</p>
 </li>
-<li><p><strong>Qual o objetivo da função de ativação? Cite três funções de ativação utilizadas em Redes Neurais.</strong>
-O objetivo da função de ativação é introduzir não-linearidade ao modelo, permitindo que a rede neural capture padrões complexos e relações não lineares nos dados. Três funções de ativação são:</p>
-<ul>
-<li><strong>Sigmoide</strong>: Normaliza a saída para um intervalo entre 0 e 1, geralmente utilizada em problemas de classificação binária.</li>
-<li><strong>Tangente Hiperbólica</strong>: A função <em>tanh</em> normaliza a saída para um intervalo entre -1 e 1, sendo utilizada em casos onde a saída pode ser negativa.</li>
-<li><strong>Relu</strong>: É amplamente utilizada para o treinamento de redes neurais, onde a função é definida como <em>max(0, x)</em>.</li>
-</ul>
+<li><p>Camada de pooling <strong>(OPCIONAL)</strong>: Essa camada reduz a dimensionalidade das caracteristicas extraídas na camada de convolução, tornando o modelo mais eficiência e ajudando a tornar o modelo mais robusto a pequenas variações nas imagens</p>
 </li>
-<li><p><strong>O que é perceptron de múltiplas camadas ou multilayer perceptron (MLP)?</strong>
-O MLP (Multilayer Perceptron) é uma das primeiras redes neurais desenvolvidas que superou a limitação das redes neurais de camada única, que não conseguiam resolver problemas de classificação não-linear. Com o layout do MLP, as redes neurais se tornaram mais robustas e capazes de aprender padrões complexos. Um MLP é composto por uma camada de entrada, uma ou mais camadas ocultas com múltiplos neurônios, e uma camada de saída. Cada neurônio em uma camada está conectado a cada neurônio na próxima camada, e cada conexão tem um peso que é ajustado durante o treinamento para minimizar o erro da rede.</p>
+<li><p>Camada totalmente conectada: Após as extrações de características, a camada totalmente conectada processa todas as informações para realizar a classificação ou tarefa desejada, conectando todos os filtros utilizado na camada anterior.</p>
 </li>
-<li><p><strong>O que é o backpropagation?</strong>
-Backpropagation é um algoritmo computacional utilizado para treinar redes neurais ajustando os pesos e vieses para minimizar o erro. Esse ajuste é realizado após cada iteração, calculando o erro da saída da rede e propagando esse erro de trás para frente através da rede. O algoritmo utiliza o gradiente do erro em relação aos pesos para atualizar os pesos e vieses de maneira eficiente, reduzindo assim o erro da rede neural de forma iterativa. O objetivo é ajustar os parâmetros da rede para melhorar sua capacidade de generalização e precisão.</p>
-</li>
-<li><p><strong>O que é taxa de aprendizado e como ela afeta o treinamento de uma rede neural?</strong>
-A taxa de aprendizado é um hiperparâmetro que define a magnitude das atualizações aplicadas aos pesos e vieses da rede neural a cada iteração do algoritmo de backpropagation. Geralmente, a taxa de aprendizado é um valor menor que 1. Se a taxa de aprendizado for muito alta, as atualizações podem ser grandes demais, fazendo com que a rede oscile e nunca converja para o mínimo global do erro. Por outro lado, se a taxa de aprendizado for muito baixa, o treinamento pode se tornar muito lento e a rede pode ficar presa em mínimos locais. Portanto, escolher uma taxa de aprendizado adequada é crucial para garantir que a rede neural aprenda de maneira eficiente e eficaz.</p>
+<li><p>Camada de saída: A última camada da rede, responsável pela saída final do modelo, como a classe prevista no caso da tarefa de classificação. Geralmente utiliza uma função de ativação como softmax para prever a probabilidade entre as classes.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
+<li><strong>Qual a função das Camadas Convolucionais?</strong></li>
+</ol>
+<p>Como mencionado anteriormente, a camada de convolução tem como objetivo extrair características como borda, textura, linhas horizontais e verticais. No entando, essa camada é responsável por detectar padrões especiais.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li><strong>Qual o conceito de Stride e Padding?</strong></li>
+</ol>
+<p>O stride e padding são parâmetros adicionados as camadas de convolução. O stride é o número de píxel que o filtro (kernel) vai se mover a cada passo, um stride de 1 significa que o filtro vai se mover um píxel por vez. O padding é a adição de píxel em volta da imagem de entrada, para que a imagem depois da convolução tenha dimensões iguais, podendo ser "valid" (sem padding) ou "same" (com padding).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li><strong>Considere uma a matriz Imagem que possui dimensões 5x5 e um filtro com dimensões 3x3, a seguir.</strong></li>
+</ol>
+<p>A matriz Imagem é dada por:</p>
+<p>$
+\text{Imagem} = \begin{pmatrix}
+1 &amp; 2 &amp; 3 &amp; 0 &amp; 1 \\
+4 &amp; 5 &amp; 6 &amp; 1 &amp; 2 \\
+7 &amp; 8 &amp; 9 &amp; 2 &amp; 3 \\
+0 &amp; 1 &amp; 2 &amp; 3 &amp; 0 \\
+3 &amp; 2 &amp; 1 &amp; 0 &amp; 4
+\end{pmatrix}
+$</p>
+<p>E o Filtro é dado por:</p>
+<p>$
+\text{Filtro} = \begin{pmatrix}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{pmatrix}
+$</p>
+<p>Calcule a convolução dessa matriz de imagem com o filtro utilizando uma operação de convolução com <strong>STRIDE=1</strong> e <strong>sem padding</strong> e apresente o resultado final.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">conv_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="mi">4</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">5</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">6</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="mi">7</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">8</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="mi">9</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">1</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">conv_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[[25 18 17]
+ [20 19 12]
+ [21 14 20]]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span>
+
+<span class="c1"># Convolução usando scipy</span>
+<span class="n">conv_result</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'valid'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conv_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[[25 18 17]
+ [20 19 12]
+ [21 14 20]]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="5">
+<li><strong>Considere agora as seguintes configurações para dimensões e processo de convolução da imagem e do filtro:</strong></li>
+</ol>
+<p><strong>Imagem: 15x15 (altura x largura)</strong></p>
+<p><strong>Filtro: 5x5 (altura x largura)</strong></p>
+<p><strong>Stride: 1</strong></p>
+<p><strong>Padding: same (Half padding)</strong></p>
+<p><strong>Qual será a dimensão da saída após a convolução da imagem com o filtro?</strong></p>
+<p>Como o stride é igual a 1 e a convolução está com o padding ligado a dimensão da saída após o filtro vai ser de 15x15, igual a imagem de entrada.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="6">
+<li><strong>Considere agora as seguintes configurações para dimensões e processo de convolução da imagem e do filtro:</strong></li>
+</ol>
+<p><strong>Imagem: 15x15 (altura x largura)</strong></p>
+<p><strong>Filtro: 5x5 (altura x largura)</strong></p>
+<p><strong>Stride: 1 (unitário)</strong></p>
+<p><strong>Padding: Zero padding</strong></p>
+<p><strong>Qual será a dimensão da saída após a convolução da imagem com o filtro?</strong></p>
+<p>Como a a camada de convolução tem stride igual a 1 e não é aplicado padding, após o deslizamento da kernel sobre a imagem a saída dessa camada vai ser igual a dimensão da imagem menos a do filtro mais o número de stride, que nesse caso vai ter como saída uma imagem 11x11.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol>
+<li><strong>Considere uma matriz de imagem 8x8, conforme mostrado abaixo:</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">max_pooling</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">max_pooling</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[[6 4 8 9]
+ [9 8 9 5]
+ [5 7 8 9]
+ [9 5 7 9]]
+</pre>
+</div>
 </div>
 </div>
 </div>

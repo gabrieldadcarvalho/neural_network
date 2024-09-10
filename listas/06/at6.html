@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>at3</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>at6</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7517,7 +7517,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 style="text-align: center;">Lista 3 - Exercícios Redes Neurais:</h1>
+<h1 style="text-align: center;">Lista 6 - Exercícios Redes Neurais:</h1>
 <h2 style="text-align: center;">
 <a href="https://github.com/Jodavid" style="color: blue; text-decoration: underline;" target="_blank">
         Prof. Dr. Jodavid Ferreira
@@ -7525,7 +7525,7 @@ a.anchor-link {
 </h2>
 <p><em>Discente:</em></p>
 <pre><code>*   Gabriel D'assumpção de Carvalho</code></pre>
-<p><em>Data:</em> 29/07/2024</p>
+<p><em>Data:</em> 09/09/2024</p>
 <hr/>
 <hr/>
 </div>
@@ -7539,38 +7539,68 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol>
-<li><p><strong>O que são Redes Neurais Artificiais?</strong>
-Redes neurais é um modelo de aprendizado de maquina que percente ao grupo de aprendizado profundo onde a inteção é imitar o aprendizado de um cérebro humano, tendo as sinpase onde elas vão conter os paramêtros de peso e vão ser ligada aos neurôneus que contem uma função de ativação que sera aplicada a soma dos valores anteriores multiplicado pelos pesos e acrescentado um vies.</p>
-</li>
-<li><p><strong>Esboce a estrutura de uma rede neural artificial, adicionando informações sobre cada parte da rede.</strong>
-<img alt="alt text" src="nn.png"/></p>
-<p>onde:</p>
-<ul>
-<li><strong>( x1 )</strong> Feature.</li>
-<li><strong>( w1 )</strong> Peso.</li>
-<li><strong>( b )</strong> Bias.</li>
-<li><strong>( f(x1*w1 + b) )</strong> Função de Ativação .</li>
-<li><strong>( ŷ )</strong> Target Estimado.</li>
-</ul>
-</li>
-<li><p><strong>Qual o objetivo da função de ativação? Cite três funções de ativação utilizadas em Redes Neurais.</strong>
-O objetivo da função de ativação é introduzir não-linearidade ao modelo, permitindo que a rede neural capture padrões complexos e relações não lineares nos dados. Três funções de ativação são:</p>
-<ul>
-<li><strong>Sigmoide</strong>: Normaliza a saída para um intervalo entre 0 e 1, geralmente utilizada em problemas de classificação binária.</li>
-<li><strong>Tangente Hiperbólica</strong>: A função <em>tanh</em> normaliza a saída para um intervalo entre -1 e 1, sendo utilizada em casos onde a saída pode ser negativa.</li>
-<li><strong>Relu</strong>: É amplamente utilizada para o treinamento de redes neurais, onde a função é definida como <em>max(0, x)</em>.</li>
-</ul>
-</li>
-<li><p><strong>O que é perceptron de múltiplas camadas ou multilayer perceptron (MLP)?</strong>
-O MLP (Multilayer Perceptron) é uma das primeiras redes neurais desenvolvidas que superou a limitação das redes neurais de camada única, que não conseguiam resolver problemas de classificação não-linear. Com o layout do MLP, as redes neurais se tornaram mais robustas e capazes de aprender padrões complexos. Um MLP é composto por uma camada de entrada, uma ou mais camadas ocultas com múltiplos neurônios, e uma camada de saída. Cada neurônio em uma camada está conectado a cada neurônio na próxima camada, e cada conexão tem um peso que é ajustado durante o treinamento para minimizar o erro da rede.</p>
-</li>
-<li><p><strong>O que é o backpropagation?</strong>
-Backpropagation é um algoritmo computacional utilizado para treinar redes neurais ajustando os pesos e vieses para minimizar o erro. Esse ajuste é realizado após cada iteração, calculando o erro da saída da rede e propagando esse erro de trás para frente através da rede. O algoritmo utiliza o gradiente do erro em relação aos pesos para atualizar os pesos e vieses de maneira eficiente, reduzindo assim o erro da rede neural de forma iterativa. O objetivo é ajustar os parâmetros da rede para melhorar sua capacidade de generalização e precisão.</p>
-</li>
-<li><p><strong>O que é taxa de aprendizado e como ela afeta o treinamento de uma rede neural?</strong>
-A taxa de aprendizado é um hiperparâmetro que define a magnitude das atualizações aplicadas aos pesos e vieses da rede neural a cada iteração do algoritmo de backpropagation. Geralmente, a taxa de aprendizado é um valor menor que 1. Se a taxa de aprendizado for muito alta, as atualizações podem ser grandes demais, fazendo com que a rede oscile e nunca converja para o mínimo global do erro. Por outro lado, se a taxa de aprendizado for muito baixa, o treinamento pode se tornar muito lento e a rede pode ficar presa em mínimos locais. Portanto, escolher uma taxa de aprendizado adequada é crucial para garantir que a rede neural aprenda de maneira eficiente e eficaz.</p>
-</li>
+<li><strong>O que é uma rede neural totalmente conectada (fully connected neural network)?</strong></li>
 </ol>
+<p>Uma rede neural (nn) totalmente conectada é um tipo de arquitetura de rede neural em que cada neurônio de uma camada está conectado a todos neurônios da camada seguinte.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
+<li><strong>Como o Dropout funciona em uma rede neural e por que ele é importante?</strong></li>
+</ol>
+<p>O dropout é um parâmetro proposto na arquitetura da rede que tem como proposito desativar uma porcentagem (X%) dos neurônios de uma camada durante o treinamento. Isso significa que a cada cada época, diferentes subconjuntos de neurônios vão ser ignorados, o que força a rede a não depender de combinações específicas de neurônios. O objetivo é reduzir o overfiting, melhorando a capacidade da rede de generalizar para novas observações.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li><strong>O que significa overfitting em redes neurais e como o Dropout ajuda a preveni-lo?</strong></li>
+</ol>
+<p>Overfitting é um problema que acontece quando um modelo se ajusta muito bem para os dados de treinamento, aprendendo até mesmo o ruído e variação desse conjunto de dados. Como resultado o modelo perde a capacidade de generalizar para novos dados, apresentando um desempenho muito inferior nos dados de validação e/ou de teste. Isso é frequentemente identificado quando o modelo possui uma acurácia alta nos dados de treinamento mas baixa nos dados de validação e/ou teste.</p>
+<p>O dropout ajuda a previnir o overfitting ao desativar aleatoriamente uma fração dos neurônios em cada época de treinamento, forçando a rede a não depender excessivamente de uma combinação específica de neurônios. Dessa maneira, a rede é forçada a aprender representações mais generalizadas e robustas, distribuindo o erro np backpropagation de uma melhor forma.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li><strong>Qual é o impacto do uso de uma taxa de Dropout alta versus uma taxa de Dropout baixa em uma rede neural?</strong></li>
+</ol>
+<p>Uma alta taxa de dropout (por exemplo 50% ou mais) pode levar ao underfitting, que ocorre quando o modelo não consegue capturar o padrão dos dados. isso acontece porque, com muitos neurônios desativados o modelo perde a capacidade de aprender as relações entre as variáveis na fase de treinamento. Como resultado, o desempenho do modelo fica ruim tanto nos dados de treinamento como no teste.</p>
+<p>Por outro lado, um dropout baixo a moderado (entre 20% a 30%) são geralmente eficazes para evitar o overfitting. Essas taxas ajudam ao modelo a não se ajustar demais ao conjunto de dados de treinamento, sem comprometer a sua capacidade de aprendizado. A taxa de dropout ideal vai depender da necessidade de reduzir o overfitting e o risco em cair em um underfitting.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="5">
+<li><strong>Como o Dropout é implementado durante a fase de inferência (teste/predição) de uma rede neural?</strong></li>
+</ol>
+<p>Quando o dropout é utilizado duranto o treinamento, uma porcentagem (por exemplo 50%) dos neurônios são desativados, para evitar overfitting. No entando, durante a fase de teste/predição, o dropout é desligado, ou seja, todos os neurônios estão ativos.</p>
+<p>Para compensar o fato de que, no treinamento nem todos os neurônios estavam ativados, as ativações dos neurônios vão ser ajustados na fase de inferência. Isso é feito por meio da técnica chamada de <strong>inverted dropout</strong>, onde a saída de cada neurônio é multiplicada por uma fração correspondende a taxa de dropout usada durante o treinamento. Por exemplo, se a taxa de dropout utilizada foi de 50%, as ativações são multiplicadas por 0.5 para manter a corência com a fase de treinamento onde o modelo desativava 50% dos neurônios.</p>
 </div>
 </div>
 </div>
